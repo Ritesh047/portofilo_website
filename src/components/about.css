@@ -1,0 +1,113 @@
+/* Main container for the About section */
+#about {
+    padding: 80px 20px;
+    background-color: #F8F9FA;
+    color: #000;
+    text-align: center;
+  }
+  
+  /* Centered heading with light underline */
+  #about h3 {
+    font-size: 3rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+  }
+  
+  #about h3::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #0056D2; /* Light underline */
+    margin: 10px auto 0;
+    border-radius: 5px;
+  }
+  
+  /* Container to hold description and toolkit side by side */
+  #about .content-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px; /* Space between description and toolkit */
+    margin-top: 40px;
+  }
+  
+  /* Description section styles */
+  #about .description {
+    max-width: 500px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    text-align: left;
+  }
+  
+  /* Call-to-action button inside the description */
+  #about .about-btn {
+    background-color: #0056D2;
+    color: #FFF;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  #about .about-btn:hover {
+    background-color: #003DA9;
+  }
+  
+  /* Toolkit section */
+  #about .tech-stack {
+    max-width: 400px;
+  }
+  
+  #about .tech-stack h5 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Flexbox for tech chips */
+  #about .chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  /* Individual tech chips */
+  #about .chip {
+    border: 2px solid #FF6B6B;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    color: #FF6B6B;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: default;
+  }
+  
+  #about .chip:hover {
+    background-color: #FF6B6B;
+    color: #FFF;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    #about .content-container {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+  
+    #about .description, #about .tech-stack {
+      text-align: center;
+    }
+  
+    #about .description {
+      max-width: 100%;
+    }
+  }
+  
