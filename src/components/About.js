@@ -1,5 +1,5 @@
-// About.js
 import React from 'react';
+import { Link as ScrollLink } from 'react-scroll'; // Import ScrollLink for navigation
 import './about.css'; // Make sure to create this CSS file
 
 const About = () => {
@@ -18,8 +18,8 @@ const About = () => {
                             rel="noopener noreferrer" 
                             className="academy-link"
                         >
-                            AcademiXEdu
-                        </a>.
+                        <strong>    AcademiXEdu. </strong>  
+                        </a>
                     </p>
                     <p>
                         My journey in technology started with a fascination for coding and problem-solving, leading me to specialize in creating dynamic web applications using Java, Spring Boot, React, and Redux.
@@ -30,7 +30,9 @@ const About = () => {
                     <p>
                         In my free time, I explore new technologies, contribute to open-source projects, and engage with the developer community, all while striving for continuous learning in the evolving landscape of software development.
                     </p>
-                    <button className="about-btn">Projects</button>
+                    <ScrollLink to="projects" spy={true} smooth={true} duration={500} offset={-70}>
+                        <button className="about-btn">Projects</button>
+                    </ScrollLink>
                 </div>
 
                 <div className="tech-stack">
