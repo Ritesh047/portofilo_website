@@ -1,77 +1,68 @@
 import React from 'react';
 import { Container, Grid, Card, CardContent, Typography, Button, Box } from '@mui/material';
 import weatherImage from '../assets/images/weather.jpg'; // Ensure this path is correct
+import movieflixImage from '../assets/images/movie.jpg'; // Add CinemaHub image path
+import './Project.css'; // Import the CSS file
 
-const project = {
-  title: 'Weather Finder',
-  description: 'Real-time weather forecasting and analytics application utilizing OpenWeatherMap API.',
-  skills: ['JavaScript', 'React.js', 'Redux', 'HTML', 'CSS', 'OpenWeather API'],
-  image: weatherImage, // Use the imported image
-};
+const projects = [
+  {
+    title: 'Weather Finder',
+    description: 'Real-time weather forecasting and analytics application utilizing OpenWeatherMap API.',
+    skills: ['JavaScript', 'React.js', 'Redux', 'HTML', 'CSS', 'OpenWeather API'],
+    image: weatherImage,
+    link: 'https://locationweatherfinder.netlify.app/',
+  },
+  {
+    title: 'CinemaHub',
+    description: 'A movie discovery app to explore top-rated films and access detailed information, leveraging the TMDb API.',
+    skills: ['JavaScript', 'React.js', 'Material UI', 'TMDb API', 'CSS', 'Spring-Boot', 'MySQL'],
+    image: movieflixImage,
+    link: 'https://mvoieflixx.netlify.app/',
+  }
+];
 
 const Projects = () => {
   return (
-    <Container sx={{ marginY: 8, padding: 5 }}>
-      <Grid container spacing={2} justifyContent="center">
-        <Grid item xs={12} md={8}>
-          <Card
-            sx={{
-              display: 'flex',
-              flexDirection: { xs: 'column', md: 'row' }, // Stack vertically on small screens
-              borderRadius: 1,
-              overflow: 'hidden',
-              boxShadow: 10,
-            }}
-          >
-            <Box
-              sx={{
-                width: { xs: '100%', md: '50%' }, // Full width on small screens, 50% on medium+
-                height: { xs: '200px', md: '355px' }, // Adjust height for mobile
-                backgroundImage: `url(${project.image})`,
-                backgroundSize: 'cover', // Ensure the image fills the Box while maintaining aspect ratio
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat', // Prevent the image from repeating
-              }}
-            />
-            <CardContent
-              sx={{
-                width: { xs: '100%', md: '50%' }, // Full width on mobile, 50% on larger screens
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                padding: 3,
-              }}
-            >
-              <Typography variant="h4" component="div" sx={{ fontWeight: 'bold', color: '#1B263B' }}>
-                {project.title}
-              </Typography>
-              <Typography variant="body1" sx={{ marginY: 2, color: '#666' }}>
-                {project.description}
-              </Typography>
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', marginBottom: 2 }}>
-                {project.skills.map((skill, index) => (
-                  <Typography
-                    key={index}
-                    variant="body2"
-                    sx={{
-                      backgroundColor: '#F6BD60',
-                      borderRadius: 2,
-                      padding: '4px 8px',
-                      marginRight: 1,
-                      marginBottom: 1,
-                      color: '#1B263B',
-                    }}
-                  >
-                    {skill}
-                  </Typography>
-                ))}
-              </Box>
-              <Button variant="contained" color="primary" href="https://yourprojectlink.com" target="_blank">
-                Check it
-              </Button>
-            </CardContent>
-          </Card>
-        </Grid>
+    <Container className="container">
+      <Typography variant="h4" className="title">
+         Projects
+      </Typography>
+      <Grid container spacing={4} direction="column" justifyContent="center">
+        {projects.map((project, index) => (
+          <Grid item xs={15} key={index}> {/* Full width for each project */}
+            <Card className="project-card">
+              {/* Image Box */}
+              <Box
+                className="card-image"
+                style={{ backgroundImage: `url(${project.image})` }}
+              />
+              {/* Project Details */}
+              <CardContent className="card-content">
+                <Typography variant="h5" component="div">
+                  {project.title}
+                </Typography>
+                <Typography variant="body1">
+                  {project.description}
+                </Typography>
+                {/* Skills */}
+                <Box className="skills-container">
+                  {project.skills.map((skill, skillIndex) => (
+                    <Typography key={skillIndex} className="skill">
+                      {skill}
+                    </Typography>
+                  ))}
+                </Box>
+                <Button
+                  className="button"
+                  href={project.link}
+                  target="_blank"
+                >
+                  Check it out
+                </Button>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
       </Grid>
     </Container>
   );

@@ -1,0 +1,138 @@
+/* Project Container */
+.container {
+    margin: 2rem auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 1500px; /* Restrict the maximum width on large screens */
+  }
+  
+  h4.title {
+    text-align: center;
+    font-weight: bold;
+    color: #1B263B;
+    margin-bottom: 3rem;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Card styling */
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Image section */
+  .card-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.4s ease-in-out;
+  }
+  
+  .project-card:hover .card-image {
+    opacity: 0.9;
+  }
+  
+  /* Card content */
+  .card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .card-content h5 {
+    font-weight: bold;
+    color: #1B263B;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .card-content p {
+    color: #666666;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Skills section */
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .skill {
+    background-color: #F6BD60;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #1B263B;
+  }
+  
+  /* Button styling */
+  .button {
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #2E5BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .button:hover {
+    background-color: #004DCC;
+  }
+  
+  /* Media Queries for Responsive Design */
+  
+  /* Small screens (less than 600px) */
+  @media (max-width: 600px) {
+    .project-card {
+      flex-direction: column;
+    }
+  
+    .card-image {
+      height: 200px;
+    }
+  }
+  
+  /* Medium screens (600px to 900px) */
+  @media (min-width: 600px) and (max-width: 900px) {
+    .project-card {
+      flex-direction: column;
+    }
+  
+    .card-image {
+      height: 250px;
+    }
+  }
+  
+  /* Large screens (greater than 900px) */
+  @media (min-width: 900px) {
+    .project-card {
+      flex-direction: row;
+    }
+  
+    .card-image {
+      width: 50%;
+      height: 355px;
+    }
+  
+    .card-content {
+      width: 50%;
+    }
+  }
+  
