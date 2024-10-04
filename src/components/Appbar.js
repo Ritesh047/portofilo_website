@@ -59,9 +59,9 @@ const AppBarComponent = () => {
                 sx={{
                   marginRight: { xs: 1, md: 3 }, // Adjust margin based on screen size
                   color: '#1B263B',
-                  fontWeight: 'bold',
+                  fontWeight: 'bold', // Make the text bold
                   cursor: 'pointer',
-                  fontFamily: 'Courier New, monospace', // Change to your preferred font
+                  fontFamily: 'Arial, sans-serif', // Same font as Ritesh's name
                   fontSize: { xs: '0.9rem', md: '1rem' }, // Responsive font size
                 }}
               >
