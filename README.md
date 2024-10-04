@@ -16,25 +16,22 @@ This is the frontend part of a contact form application built with React. It pro
 
 - **React** - JavaScript library for building user interfaces.
 - **Material-UI** - React components for faster and easier web development.
-- **Axios** - Promise-based HTTP client for the browser and Node.js.
+- **Axios** - Promise-based HTTP client for the browser..
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (version 14 or higher)
 - npm (Node Package Manager)
 
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone <https://github.com/Ritesh047/portofilo_website.git>
    cd contactform-frontend
 Install dependencies:
 
-bash
-Copy code
 npm install
 Update the API URL in the Contact.js file to point to your backend:
 
@@ -43,8 +40,6 @@ Copy code
 const response = await axios.post('http://localhost:8080/api/contact', formData);
 Start the development server:
 
-bash
-Copy code
 npm start
 The frontend will run on http://localhost:3000.
 
