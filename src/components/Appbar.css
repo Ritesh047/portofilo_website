@@ -1,0 +1,19 @@
+/* src/styles/AppBar.css */
+.AppBar {
+    background-color: #FFFFFF; /* White background */
+    padding: 0 20px; /* Padding for spacing */
+  }
+  
+  .AppBar .Avatar {
+    border: 2px solid #1B263B; /* Border around the avatar */
+  }
+  
+  .AppBar .Typography {
+    color: #1B263B; /* Text color */
+    font-weight: bold; /* Bold text */
+  }
+  
+  .AppBar .Switch {
+    margin-left: auto; /* Align switch to the right */
+  }
+  

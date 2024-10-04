@@ -1,113 +1,145 @@
-/* Main container for the About section */
+/* About.css */
+
+/* General Styles for About Section */
+body {
+  margin: 1.5;
+  padding: 2000;
+  box-sizing: border-box;
+}
+
 #about {
-    padding: 80px 20px;
-    background-color: #F8F9FA;
-    color: #000;
-    text-align: center;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px; /* Adjust width of underline */
+  height: 3px;  /* Adjust thickness of underline */
+  background-color: #0842bd; /* Change color of underline if needed */
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-top: 2px;
+}
+
+/* Responsive Typography */
+#about p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Container for Description and Toolkit */
+.content-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Description Section */
+.description {
+  flex: 1;
+  min-width: 280px; /* Ensures it doesn't shrink too small */
+  margin: 10px;
+  text-align: left;
+}
+
+/* Button */
+.about-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Toolkit Section */
+.tech-stack {
+  flex: 1;
+  min-width: 20px;
+  margin: 10px;
+}
+
+.chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.chip {
+  background-color: #ebe9e9;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin: 5px;
+  font-size: 0.9rem;
+}
+
+.academy-link {
+  color: #000000; /* or any color from your theme */
+  text-decoration: none; /* Remove underline */
+}
+
+.academy-link:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Design - Smaller Screens */
+@media (max-width: 768px) {
+  #about {
+      padding: 1px;
   }
-  
-  /* Centered heading with light underline */
+
   #about h3 {
-    font-size: 3rem;
-    font-weight: bold;
-    position: relative;
-    display: inline-block;
-    margin-bottom: 40px;
+      font-size: 1.2rem;
   }
-  
-  #about h3::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #0056D2; /* Light underline */
-    margin: 10px auto 0;
-    border-radius: 5px;
+
+  .content-container {
+      flex-direction: column; /* Stack the columns vertically */
   }
-  
-  /* Container to hold description and toolkit side by side */
-  #about .content-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 50px; /* Space between description and toolkit */
-    margin-top: 40px;
+
+  .description, .tech-stack {
+      max-width: 1000%;
+      text-align: left;
   }
-  
-  /* Description section styles */
-  #about .description {
-    max-width: 500px;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #444;
-    text-align: left;
+
+  .chip-container {
+      justify-content: left; /* Ensure chips are centered on smaller screens */
   }
-  
-  /* Call-to-action button inside the description */
-  #about .about-btn {
-    background-color: #0056D2;
-    color: #FFF;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
+
+  .about-btn {
+      padding: 10px 15px;
+      font-size: 0.9rem;
   }
-  
-  #about .about-btn:hover {
-    background-color: #003DA9;
+}
+
+@media (max-width: 480px) {
+  #about h3 {
+      font-size: 1.5rem;
   }
-  
-  /* Toolkit section */
-  #about .tech-stack {
-    max-width: 400px;
+
+  .chip {
+      font-size: 0.8rem;
+      padding: 6px 10px;
   }
-  
-  #about .tech-stack h5 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
+
+  .about-btn {
+      width: 100%; /* Make button full width */
+      font-size: 0.85rem;
   }
-  
-  /* Flexbox for tech chips */
-  #about .chip-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  
-  /* Individual tech chips */
-  #about .chip {
-    border: 2px solid #FF6B6B;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-size: 1rem;
-    color: #FF6B6B;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    cursor: default;
-  }
-  
-  #about .chip:hover {
-    background-color: #FF6B6B;
-    color: #FFF;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    #about .content-container {
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-    }
-  
-    #about .description, #about .tech-stack {
-      text-align: center;
-    }
-  
-    #about .description {
-      max-width: 100%;
-    }
-  }
-  
+}
